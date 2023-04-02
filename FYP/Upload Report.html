@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Upload Report</title>
+
+	<style>
+		body{
+			background-image: url("背景.jpg");
+			background-size: cover;
+			background-position: center;
+			text-align:start;
+		}
+	</style>
+</head>
+<body>
+	<h1>Upload Report</h1>
+	<form action="#" method="post" enctype="multipart/form-data">
+		<label for="username">Username:</label>
+        <input type="text" placeholder="Username" id="username" name="username"><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" placeholder="Email" id="email" name="email"><br><br>
+
+		<label for="upload_time">Time:</label>
+		<input type="datetime-local" id="upload_time" name="upload_time"><br><br>
+        
+		<label for="location">Location:</label><br>
+		<textarea cols="40" rows="3" placeholder="Specific location and report details"></textarea>
+		<!--<input type="text" placeholder="Specific location" id="location" name="location">--><br><br>
+
+		<label for="file_upload">Picture:</label>
+		<input type="file" multiple/> <id="file_upload" name="file_upload"><br><br>
+
+		<input type="reset" value="reset">
+		<input type="submit" value="Submit">
+	</form>
+	<script>
+		// 当表单提交成功后跳转到新页面
+		document.querySelector('form').addEventListener('submit', function(event) {
+			event.preventDefault(); // 阻止表单默认的提交行为
+
+			// 处理表单提交
+			// ...
+
+			// 跳转到新页面
+			window.location.href = 'success.html';
+		});
+	</script>
+
+</body>
+</html>

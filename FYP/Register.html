@@ -1,0 +1,101 @@
+<html>
+    <head>
+        <title>
+            Register a new account.
+        </title>
+        <style>
+            body{
+                background-image: url("背景.jpg");
+                background-size: cover;
+                background-position: center;
+                text-align:start;
+                width: 25%;/*左右*/
+                margin: 100 auto;/*上下*/
+            }
+        </style>
+    </head>
+
+    <body>
+        <form action=""><!--action内写提交地址！-->
+            Username: <input type="text" placeholder="Username"><br><br>
+            Password: <input type="password" placeholder="password"><br><br>
+            Birthday: <input type="date" value="2012-12-31" min="1900-01-01" max="2012-12-31"><br><br>
+            Gender:   <label><input type="radio" name="sex" value="1" />Male</label>
+                      <label><input type="radio" name="sex" value="2" checked />Female</label><br><br>
+            Email:    <input type="email" placeholder="Email"><br><br>
+            Phone No.:<input type="number" placeholder="Phone Number"><br><br>
+            Building: <select>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select><br><br>
+            Avatar:   <input type="file" /> <!--<input type="file" multiple />上传多个文件--><br><br>
+            <!--<label for="email">Email Address:</label>
+            <input type="email" id="email" name="email"><br>
+            <label for="code">Verification code:</label>
+            <input type="text" id="code" name="code">
+            <button type="button" id="send-code">Send-code</button>
+            <button type="button" id="verify-code">Verify</button>-->
+            <input type="reset" />
+            <input type="submit" />
+        </form>
+
+        <script>
+            // 当表单提交成功后跳转到新页面
+            document.querySelector('form').addEventListener('submit', function(event) {
+                event.preventDefault(); // 阻止表单默认的提交行为
+    
+                // 处理表单提交
+                // ...
+    
+                // 跳转到新页面
+                window.location.href = 'success.html';
+            });
+        </script>
+        <!--<script>
+            const sendBtn = document.querySelector('#send-code');
+            const verifyBtn = document.querySelector('#verify-code');
+            const emailInput = document.querySelector('#email');
+            const codeInput = document.querySelector('#code');
+            const API_BASE_URL = 'http://localhost:3000';
+      
+            // 发送验证码
+            sendBtn.addEventListener('click', function() {
+              const email = emailInput.value;
+              const xhr = new XMLHttpRequest();
+              xhr.open('POST', `${API_BASE_URL}/send-code`);
+              xhr.setRequestHeader('Content-Type', 'application/json;charset=utf-8');
+              xhr.onreadystatechange = function() {
+                if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                  alert('验证码已发送，请查收您的电子邮件！');
+                }
+              };
+              xhr.send(JSON.stringify({ email }));
+            });
+      
+            // 验证验证码
+            verifyBtn.addEventListener('click', function() {
+              const email = emailInput.value;
+              const code = codeInput.value;
+              const xhr = new XMLHttpRequest();
+              xhr.open('POST', `${API_BASE_URL}/verify-code`);
+              xhr.setRequestHeader('Content-Type', 'application/json;charset=utf-8');
+              xhr.onreadystatechange = function() {
+                if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                  const result = JSON.parse(xhr.responseText);
+                  if (result.success) {
+                    alert('验证码验证通过！');
+                  } else {
+                    alert('验证码验证失败，请检查您输入的验证码！');
+                  }
+                }
+              };
+              xhr.send(JSON.stringify({ email, code }));
+            });
+          </script>-->
+
+    </body>
+
+</html>
