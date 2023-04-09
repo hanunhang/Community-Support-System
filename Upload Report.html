@@ -1,51 +1,164 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title>Upload Report</title>
+<html lang="en">
+    <head>
+        <!-- https://blog.hubspot.com/website/html-form-template -->
+        <meta charset="UTF-8">
+        <link rel="stylesheet"  href="css/style1.css">
+        <script src="RequestTicket.js"></script>
+        <title>Request Ticket</title>
+    </head>
 
-	<style>
-		body{
-			background-image: url("背景.jpg");
-			background-size: cover;
-			background-position: center;
-			text-align:start;
-		}
-	</style>
-</head>
-<body>
-	<h1>Upload Report</h1>
-	<form action="#" method="post" enctype="multipart/form-data">
-		<label for="username">Username:</label>
-        <input type="text" placeholder="Username" id="username" name="username"><br><br>
+    <body>
 
-        <label for="email">Email:</label>
-        <input type="email" placeholder="Email" id="email" name="email"><br><br>
+    <header class="header1">
+        <a href="index.html">
+            <img src="imgs/flc_design2022120287111.png">
+        </a>
+        <nav class="menu">
+            <ul>
+                <li><a href="index.html" target="_blank" class="home-button">Home</a></li>
+                <li><a href="Announcement.html" >Announcement</a></li>
+                <li><a href="index.html">Ticket</a></li>
+                <li><a href="check.html">Status</a></li>
+                <li><a href="Contact.html" target="_blank">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-		<label for="upload_time">Time:</label>
-		<input type="datetime-local" id="upload_time" name="upload_time"><br><br>
-        
-		<label for="location">Location:</label><br>
-		<textarea cols="40" rows="3" placeholder="Specific location and report details"></textarea>
-		<!--<input type="text" placeholder="Specific location" id="location" name="location">--><br><br>
+    <div class="container_request">
 
-		<label for="file_upload">Picture:</label>
-		<input type="file" multiple/> <id="file_upload" name="file_upload"><br><br>
+        <form class="well form-horizontal" action=" " method="post"  id="contact_form">
+            <fieldset>
 
-		<input type="reset" value="reset">
-		<input type="submit" value="Submit">
-	</form>
-	<script>
-		// 当表单提交成功后跳转到新页面
-		document.querySelector('form').addEventListener('submit', function(event) {
-			event.preventDefault(); // 阻止表单默认的提交行为
+                <!-- Form Name -->
+                <legend class="legend_request">Request your ticket now!</legend>
 
-			// 处理表单提交
-			// ...
+                <!-- Text input-->
 
-			// 跳转到新页面
-			window.location.href = 'success.html';
-		});
-	</script>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">First Name</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input  name="first_name" placeholder="First Name" class="form-control"  type="text">
+                        </div>
+                    </div>
+                </div>
 
-</body>
+                <!-- Text input-->
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label" >Last Name</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input name="last_name" placeholder="Last Name" class="form-control"  type="text">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label">E-Mail</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                            <input name="email" placeholder="E-Mail Address" class="form-control"  type="email">
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Text input-->
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Phone #</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                            <input name="phone" placeholder="(60)xx-xxxxxxxx" class="form-control" type="text">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text input-->
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Floor Unit</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                            <input name="Floor/Room" placeholder="A3-20" class="form-control" type="text">
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Select Basic -->
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Category</label>
+                    <div class="col-md-4 selectContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                            <select name="state" class="form-control selectpicker" >
+                                <option value=" " >Select category</option>
+                                <option>Fans</option>
+                                <option>Key</option>
+                                <option >Table Lamp</option>
+                                <option >Celling Lamp</option>
+                                <option >Wardrobe</option>
+                                <option >Room</option>
+                                <option >Washroom</option>
+                                <option >Pantry</option>
+                                <option >Corridor</option>
+                                <option> Others</option>
+
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Date of issue occurrence</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+                            <input type="date" id="1" name="first" value="yyyy-month-date">
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Text area -->
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Description</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                            <textarea class="form-control-last" name="comment" placeholder="Description"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Success message -->
+               <!-- <div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Thanks for contacting us, we will get back to you shortly.</div>-->
+
+                <!-- Button -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label"></label>
+                    <div class="col-md-4">
+                        <button type="submit" class="btn btn-warning" >Submit <span class="glyphicon glyphicon-send"></span></button>
+                    </div>
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+    </div><!-- /.container -->
+
+    </body>
 </html>

@@ -4,6 +4,7 @@
             Register a new account.
         </title>
         <style>
+               
             body{
                 background-image: url("背景.jpg");
                 background-size: cover;
@@ -12,13 +13,16 @@
                 width: 25%;/*左右*/
                 margin: 100 auto;/*上下*/
             }
+            p{
+              color:deepskyblue;
+            }
         </style>
     </head>
 
     <body>
         <form action=""><!--action内写提交地址！-->
-            Username: <input type="text" placeholder="Username"><br><br>
-            Password: <input type="password" placeholder="password"><br><br>
+            <p>Username: <input type="text" placeholder="Username"></p>
+            <p>Password: <input type="password" placeholder="password"><br><br>
             Birthday: <input type="date" value="2012-12-31" min="1900-01-01" max="2012-12-31"><br><br>
             Gender:   <label><input type="radio" name="sex" value="1" />Male</label>
                       <label><input type="radio" name="sex" value="2" checked />Female</label><br><br>
@@ -39,7 +43,7 @@
             <button type="button" id="send-code">Send-code</button>
             <button type="button" id="verify-code">Verify</button>-->
             <input type="reset" />
-            <input type="submit" />
+            <input type="submit" /></p>
         </form>
 
         <script>
