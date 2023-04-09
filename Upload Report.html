@@ -31,7 +31,7 @@
             <fieldset>
 
                 <!-- Form Name -->
-                <legend class="legend_request">Request your ticket now!</legend>
+                <legend class="legend_request">Upload your report now!</legend>
 
                 <!-- Text input-->
 
@@ -84,11 +84,11 @@
                 <!-- Text input-->
 
                 <div class="form-group">
-                    <label class="col-md-4 control-label">Floor Unit</label>
+                    <label class="col-md-4 control-label">Building No.</label>
                     <div class="col-md-4 inputGroupContainer">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-                            <input name="Floor/Room" placeholder="A3-20" class="form-control" type="text">
+                            <input name="Number" placeholder="Building 1" class="form-control" type="text">
                         </div>
                     </div>
                 </div>
@@ -103,16 +103,8 @@
                             <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
                             <select name="state" class="form-control selectpicker" >
                                 <option value=" " >Select category</option>
-                                <option>Fans</option>
-                                <option>Key</option>
-                                <option >Table Lamp</option>
-                                <option >Celling Lamp</option>
-                                <option >Wardrobe</option>
-                                <option >Room</option>
-                                <option >Washroom</option>
-                                <option >Pantry</option>
-                                <option >Corridor</option>
-                                <option> Others</option>
+                                <option>Crime</option>
+                                <option>Traffic accident</option>
 
                             </select>
                         </div>
@@ -121,6 +113,7 @@
 
 
                 <!-- Text input-->
+				
                 <div class="form-group">
                     <label class="col-md-4 control-label">Date of issue occurrence</label>
                     <div class="col-md-4 inputGroupContainer">
@@ -130,6 +123,19 @@
                         </div>
                     </div>
                 </div>
+
+
+				<!-- Text input -->
+
+				<div class="form-group">
+					<label class="col-md-4 control-label">Upload File</label>
+					<div class="col-md-4 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-upload"></i></span>
+							<input type="file" id="fileInput" name="fileInput" accept=".pdf,.doc,.docx,.imgs,.png">
+						</div>
+					</div>
+				</div>
 
 
                 <!-- Text area -->
