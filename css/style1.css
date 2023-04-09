@@ -1,6 +1,7 @@
 body{
-    background-size: 100%;
-    background-color: #E8EAE3;
+    /*background-size: 100%;*/
+    background-size: cover;
+    background-color: #c7c9ca;
     background-attachment: scroll;
     margin:0px;
     height:100%;
