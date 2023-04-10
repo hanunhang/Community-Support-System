@@ -83,11 +83,11 @@ h1{
 .div1-1,.div2-1{
     padding-top:100px;
     padding-bottom: 100px;
-    background-color: #5f7d95;
+    background-color: #346c99;
 }
 .div1-2,.div2-2{
     background-color: dimgrey;
-    border: 3px solid darkgrey;
+    border: 3px solid rgb(111, 91, 91);
     padding:10px;
 }
 
