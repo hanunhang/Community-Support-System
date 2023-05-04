@@ -18,7 +18,7 @@
       <a href="javascript:;">Report</a>
       <dl class="layui-nav-child">
         <dd><a href="Upload Report.html">Upload Report</a></dd>
-        <dd><a href="View Report.html">View Report</a></dd>
+        <dd class="layui-this"><a href="View Report.html">View Report</a></dd>
       </dl>
     </li>
     <li class="layui-nav-item">
@@ -34,32 +34,168 @@
     <li class="layui-nav-item"><a href="home.html">Main Page</a></li>
   </ul>
 
-<table class="layui-hide" id="test"></table>
-              
-          
-<script src="layui/layui.js" charset="utf-8"></script>
- 
-<script>
-layui.use('table', function(){
-  var table = layui.table;
-  
-  table.render({
-    elem: '#test'
-    ,url:'/demo/table/user.json'
-    ,cellMinWidth: 80 //全局定义常规单元格的最小宽度，layui 2.2.1 新增
-    ,cols: [[
-      {field:'id', title: 'ID', sort: true}
-      ,{field:'username', title: 'Username'} //width 支持：数字、百分比和不填写。你还可以通过 minWidth 参数局部定义当前单元格的最小宽度，layui 2.2.1 新增
-      ,{field:'sex', title: 'Gender', sort: true}
-      ,{field:'location', title: 'Location'}
-      ,{field:'type', title: 'Type'}
-      ,{field:'email', title: 'Email', sort: true, align: 'right'} //单元格内容水平居右
-      ,{field:'date', title: 'Date', sort: true, align: 'right'}
-
-    ]]
-  });
-});
-</script>
-
+  <div class="layui-form">
+    <table class="layui-table">
+      <colgroup>
+        <col width="10">
+        <col width="10">
+        <col width="10">
+        <col width="10">
+        <col width="10">
+        <col width="10">
+        <col width="10">
+        <col width="10">
+        <col width="10">
+        <col width="150">
+        <col width="20">
+        <col>
+      </colgroup>
+      
+      <thead>
+        <tr>
+            <th scope="col">
+                <label class="control control--checkbox">
+                    <input type="checkbox"  class="js-check-all"/>
+                    <div class="control__indicator"></div>
+                </label>
+            </th>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Phone No.</th>
+            <th scope="col">Email</th>
+            <th scope="col">Date</th>
+            <th scope="col">Report Type</th>
+            <th scope="col">Location</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!--实例1-->
+        <tr scope="row" class="active">
+          <td>
+              <label class="control control--checkbox">
+                  <input type="checkbox" />
+                  <div class="control__indicator"></div>
+              </label>
+          </td>
+          <td>
+              1392
+          </td>
+          <td class="pl-0">
+              <div class="d-flex align-items-center">
+                  <a href="#" class="name">James Yates</a>
+              </div>
+          </td>
+          <td>01122338899</td>
+          <td>hkh@123.com</td>
+          <td>20 January 2023</td>
+          <td>Traffic Accident</td>
+          <td>Building 1</td>
+          <td>Male</td>
+          <td>Two cars collided into a traffic jam</td>
+        </tr>
+        <!--实例2-->
+        <tr scope="row" class="active">
+          <td>
+              <label class="control control--checkbox">
+                  <input type="checkbox" />
+                  <div class="control__indicator"></div>
+              </label>
+          </td>
+          <td>
+              1393
+          </td>
+          <td class="pl-0">
+              <div class="d-flex align-items-center">
+                  <a href="#" class="name">Bob Smith</a>
+              </div>
+          </td>
+          <td>01264294832</td>
+          <td>bob@123.com</td>
+          <td>20 Feburary 2023</td>
+          <td>Traffic Accident</td>
+          <td>Building 1</td>
+          <td>Male</td>
+          <td>Big tree fell on the road.</td>
+        </tr>
+        <!--Sample 3-->
+        <tr scope="row" class="active">
+          <td>
+              <label class="control control--checkbox">
+                  <input type="checkbox" />
+                  <div class="control__indicator"></div>
+              </label>
+          </td>
+          <td>
+              1394
+          </td>
+          <td class="pl-0">
+              <div class="d-flex align-items-center">
+                  <a href="#" class="name">Jenny Smith</a>
+              </div>
+          </td>
+          <td>06281538152</td>
+          <td>Jenny@123.com</td>
+          <td>21 March 2023</td>
+          <td>Crime Sence</td>
+          <td>Building 3</td>
+          <td>Female</td>
+          <td>Thief stole the wallet.</td>
+        </tr>
+        <!--Sample 4-->
+        <tr scope="row" class="active">
+          <td>
+              <label class="control control--checkbox">
+                  <input type="checkbox" />
+                  <div class="control__indicator"></div>
+              </label>
+          </td>
+          <td>
+              1395
+          </td>
+          <td class="pl-0">
+              <div class="d-flex align-items-center">
+                  <a href="#" class="name">Li Ming</a>
+              </div>
+          </td>
+          <td>07281936382</td>
+          <td>Ming@123.com</td>
+          <td>1 April 2023</td>
+          <td>Crime Sence</td>
+          <td>Building 2</td>
+          <td>Male</td>
+          <td>There is a group of people fighting.</td>
+        </tr>
+        <!--Sample 5-->
+        <tr scope="row" class="active">
+          <td>
+              <label class="control control--checkbox">
+                  <input type="checkbox" />
+                  <div class="control__indicator"></div>
+              </label>
+          </td>
+          <td>
+              1396
+          </td>
+          <td class="pl-0">
+              <div class="d-flex align-items-center">
+                  <a href="#" class="name">Denny</a>
+              </div>
+          </td>
+          <td>07281163581</td>
+          <td>Denny@123.com</td>
+          <td>30 April 2023</td>
+          <td>Traffic Accident</td>
+          <td>Building 5</td>
+          <td>Male</td>
+          <td>Some people's bicycles are causing traffic jams.</td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+  <!--给方框的对勾建立实现-->          
+  <script src="layui/layui.js" charset="utf-8"></script>
 </body>
 </html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SOS</title>
+  <style>
+    body {
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      font-size: 36px;
+      margin-top: 0;
+    }
+    label {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 18px;
+      border: 1px solid #ccc;
+    }
+    button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      font-size: 18px;
+      background-color: #f00;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+  <script>
+    function sendSOS() {
+      // 获取表单中的数据
+      var name = document.getElementById("name").value;
+      var location = document.getElementById("location").value;
+
+      // 创建XMLHttpRequest对象
+      var xhr = new XMLHttpRequest();
+
+      // 设置请求方法和URL
+      xhr.open("POST", "sos.php");
+
+      // 设置请求头信息
+      xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+      // 发送数据
+      xhr.send("name=" + name + "&location=" + location);
+
+      // 提示用户已发送SOS请求
+      alert("SOS请求已发送！");
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>SOS</h1>
+    <form>
+      <label for="name">姓名：</label>
+      <input type="text" id="name" name="name">
+
+      <label for="location">位置：</label>
+      <input type="text" id="location" name="location">
+
+      <button type="button" onclick="sendSOS()">发送SOS请求</button>
+    </form>
+  </div>
+</body>
+</html>
